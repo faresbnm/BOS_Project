@@ -31,9 +31,12 @@ class sendMail extends Controller
             : $request->message";
         
             $mail->send();
-            return redirect()->back();
-        }catch(Exception $e){
+            if($mail->send()){
+                return redirect()->back()->with('success', 'Your message has been sent!');
 
+            }
+        }catch(Exception $e){
+            return redirect()->back()->with('error', 'oops, there is something wrong');
         }
     }
 }

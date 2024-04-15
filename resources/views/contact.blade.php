@@ -41,6 +41,36 @@
         </div>
       </div>
     </div>
+    @if(Session::has('success'))
+    <div id="flash-message" style="display: none;">{{ Session::get('flash') }}</div>
+    @endif
+    @if(Session::has('error'))
+    <div id="error-message" style="display: none;">{{ Session::get('flash') }}</div>
+    @endif
+  </section>
+
+  <!-- end contact section -->
+
+  <!-- Script for alert -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var flashMessage = document.getElementById('flash-message');
+        var errorMessage = document.getElementById('error-message');
+        if (flashMessage) {
+          Swal.fire({
+            title: "Thanks",
+            text: "Your message has been sent!",
+            icon: "success"
+          });
+        }else if(errorMessage){
+          Swal.fire({
+            title: "oops",
+            text: "there is something wrong",
+            icon: "error"
+          });
+        }
+    });
+  </script>
   </section>
 
   <!-- end contact section -->

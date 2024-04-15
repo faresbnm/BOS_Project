@@ -15,7 +15,7 @@
                 <p>
                     your trusted partner in the dynamic world of petroleum services. Established in 2023, we bring fresh energy and innovative solutions to the industry, driving progress and redefining excellence.
                 </p>
-                <a href="">
+                <a href="{{url('/contact')}}">
                   Contact Us
                 </a>
               </div>
@@ -121,7 +121,7 @@
               <p>
                 we take pride in offering a range of comprehensive services that cater to the unique needs of the petroleum industry. With our expertise and commitment to excellence, we ensure that every project is executed with precision and care.
             </p>
-              <a href="">
+              <a href="{{url('/services')}}">
                 Check our Services
               </a>
             </div>
@@ -143,18 +143,19 @@
         </div>
         <div class="row">
           <div class="col-md-6">
-            <form action="">
+            <form id="contactForm" action="{{route('contact')}}" method="post">
+              @csrf
               <div>
-                <input type="text" placeholder="Name" />
+                <input type="text" name="name" required placeholder="Name" />
               </div>
               <div>
-                <input type="text" placeholder="Phone Number" />
+                <input type="text" name="number" required placeholder="Phone Number" />
               </div>
               <div>
-                <input type="email" placeholder="Email" />
+                <input type="email" name="email" required placeholder="Email" />
               </div>
               <div>
-                <input type="text" class="message-box" placeholder="Message" />
+                <input type="text" name="message" required class="message-box" placeholder="Message" />
               </div>
               <div class="d-flex ">
                 <button>
@@ -165,7 +166,35 @@
           </div>
         </div>
       </div>
+
+      @if(Session::has('success'))
+      <div id="flash-message" style="display: none;">{{ Session::get('flash') }}</div>
+      @endif
+      @if(Session::has('error'))
+      <div id="error-message" style="display: none;">{{ Session::get('flash') }}</div>
+      @endif
     </section>
   
     <!-- end contact section -->
+
+    <!-- Script for alert -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          var flashMessage = document.getElementById('flash-message');
+          var errorMessage = document.getElementById('error-message');
+          if (flashMessage) {
+            Swal.fire({
+              title: "Thanks",
+              text: "Your message has been sent!",
+              icon: "success"
+            });
+          }else if(errorMessage){
+            Swal.fire({
+              title: "oops",
+              text: "there is something wrong",
+              icon: "error"
+            });
+          }
+      });
+    </script>
 @endsection

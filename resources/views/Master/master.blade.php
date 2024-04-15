@@ -30,8 +30,8 @@
   <link href="{{asset('css/responsive.css')}}" rel="stylesheet" />
   <!--Animate on scroll-->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-
+  <!--Icon-->
+  <link rel="icon" href="{{ asset('images/logo2.jpg') }}" type="image/png">
 </head>
 
 <body>
@@ -114,7 +114,7 @@
           <div class="info_items">
             <div class="row">
               <div class="col-md-4">
-                <a href="">
+                <a>
                   <div class="item ">
                     <div class="img-box ">
                       <i class="fa fa-map-marker" aria-hidden="true"></i>
@@ -126,7 +126,7 @@
                 </a>
               </div>
               <div class="col-md-4">
-                <a href="">
+                <a>
                   <div class="item ">
                     <div class="img-box ">
                       <i class="fa fa-phone" aria-hidden="true"></i>
@@ -139,7 +139,7 @@
                 </a>
               </div>
               <div class="col-md-4">
-                <a href="">
+                <a>
                   <div class="item ">
                     <div class="img-box">
                       <i class="fa fa-envelope" aria-hidden="true"></i>
@@ -179,6 +179,10 @@
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
   <!-- End Google Map -->
+  
+  <!--Sweet Alert-->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 
 </body>
