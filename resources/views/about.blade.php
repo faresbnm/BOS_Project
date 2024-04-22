@@ -13,7 +13,7 @@
             <p style="text-align: justify;">
 
                 More than Twenty-Nine years of much diversified experience and direct operations, construction, supply chain and management with National & international experience utilizing extensive engineering and construction operations knowledge, good motivation and leadership skills to successfully complete projects. Our main target is to deliver safe, efficient and trouble-free different services to our different customers. In pursuit of this goal, we continually refine our methodologies, embrace emerging technologies, and prioritize customer satisfaction at every stage of our operations. By fostering a culture of innovation and collaboration, we strive to exceed expectations and set new benchmarks for excellence within the industry.            </p>
-            <a href="">
+            <a href="{{url('/contact')}}">
               Get in  Touch
             </a>
           </div>
